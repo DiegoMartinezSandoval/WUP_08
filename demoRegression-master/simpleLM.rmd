@@ -9,11 +9,26 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+$H_0$: There is no different (in length) between different bear body parts
+
+$H_A$: There is a difference (in length) between different bear body parts.
+
+# Methods 
+
+This is a numerical~numerical case so I will be using my helper file to use the correct graphical, numerical, and inferential methods. Since length is numerical, and we're comparing between 2 lengths to see which has the highest Adjusted- R squared. 
+
+
+
 ## make a simple regression model
 
 ```{r}
 bears <- read.csv(file="BEARS.csv",header = TRUE)
 ```
+
+
+This data chart allows me to see the different body parts that I have to compare & shows me various amounts of numerical data stating the size of a certain body part. 
+
+# Graphical Results 
 
 ## Model LENGTH ~ NECK  this is an example  
 
@@ -21,6 +36,12 @@ bears <- read.csv(file="BEARS.csv",header = TRUE)
 simp <- lm(LENGTH~NECK,data=bears)
 plot(LENGTH~NECK,data=bears)
 ```
+ 
+I can tell that this graph is linear and positive. This graph describes the relationship between length and the bear neck. We can see that the higher the neck value is, the higher the length is too. Thus, it's a positive relationship between the two. 
+
+
+
+#Numerical 
 
 
 ## now predict the length of a bear who has a neck of 17, 22 and 26
@@ -31,6 +52,9 @@ new <- data.frame(NECK=c(17,22,26))
 predict(simp,new)
 predict(simp,new,se.fit=TRUE)
 ```
+
+We can see that the predicted 
+
 
 ## Surely there is another variable that can better predict LENGTH than NECK. Find one and compare its performance to that of neck by it value of Adjusted-Rsquared (bigger is better).
 
