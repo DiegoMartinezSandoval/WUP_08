@@ -40,8 +40,7 @@ plot(LENGTH~NECK,data=bears)
 I can tell that this graph is linear and positive. This graph describes the relationship between length and the bear neck. We can see that the higher the neck value is, the higher the length is too. Thus, it's a positive relationship between the two. 
 
 
-
-#Numerical 
+# Numerical 
 
 
 ## now predict the length of a bear who has a neck of 17, 22 and 26
