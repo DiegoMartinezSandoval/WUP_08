@@ -369,10 +369,12 @@ pre code {
 </div>
 
 
-<p><span class="math inline">\(H_0\)</span>: There is no different (in
-length) between different bear body parts</p>
+<p><span class="math inline">\(H_0\)</span>: There is no difference (in
+length) between different bear body parts: all body parts have the same
+adjusted R-squared value.</p>
 <p><span class="math inline">\(H_A\)</span>: There is a difference (in
-length) between different bear body parts.</p>
+length) between different bear body parts: not all body parts have the
+same adjusted R-squared value.</p>
 <div id="methods" class="section level1">
 <h1>Methods</h1>
 <p>This is a numerical~numerical case so I will be using my helper file
@@ -521,7 +523,9 @@ Adjusted R-squared is head length &amp; age. I tried all the values by
 changing the name and body part in the same code until the highest
 number appeared. After writing down all the adjusted R-squared values,
 we have a tie. Head length and age have an adjusted R-squared value of
-.84. No other body parts had a higher value.</p>
+.84. No other body parts had a higher value. We can reject the null
+hypothesis since not all body parts had the same adjusted R-squared
+value.</p>
 </div>
 
 

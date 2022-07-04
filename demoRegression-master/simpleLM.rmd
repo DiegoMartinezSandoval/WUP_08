@@ -9,9 +9,9 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-$H_0$: There is no different (in length) between different bear body parts
+$H_0$: There is no difference (in length) between different bear body parts: all body parts have the same adjusted R-squared value. 
 
-$H_A$: There is a difference (in length) between different bear body parts.
+$H_A$: There is a difference (in length) between different bear body parts: not all body parts have the same adjusted R-squared value.
 
 # Methods 
 
@@ -90,7 +90,7 @@ The adjusted R-square for this model (HEADLEN) is .84; the model for AGE has an 
 
 # Conclusion
 
-I have seen all the adjusted R-squared values. The highest two by far is head length & age. In conclusion, the two with the highest Adjusted R-squared is head length & age.  I tried all the values by changing the name and body part in the same code until the highest number appeared. After writing down all the adjusted R-squared values, we have a tie. Head length and age have an adjusted R-squared value of .84. No other body parts had a higher value. 
+I have seen all the adjusted R-squared values. The highest two by far is head length & age. In conclusion, the two with the highest Adjusted R-squared is head length & age.  I tried all the values by changing the name and body part in the same code until the highest number appeared. After writing down all the adjusted R-squared values, we have a tie. Head length and age have an adjusted R-squared value of .84. No other body parts had a higher value. We can reject the null hypothesis since not all body parts had the same adjusted R-squared value. 
 
 
 
