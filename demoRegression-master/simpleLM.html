@@ -460,8 +460,8 @@ abline(chesty)</code></pre>
 ## Multiple R-squared:  0.791,  Adjusted R-squared:  0.7869 
 ## F-statistic: 196.7 on 1 and 52 DF,  p-value: &lt; 2.2e-16</code></pre>
 <p>The adjusted R-square for this model (CHEST) is .79; the model for
-NECK had an adjusted R-square of .75. So far the best model is the one
-based on CHEST since it’s adjusted R-square is of higher value.</p>
+NECK had an adjusted R-square of .75. So far, the best model is CHEST
+since it’s adjusted R-squared is of higher value.</p>
 <pre class="r"><code>new &lt;- data.frame(CHEST=c(17,22,26))
 predict(chesty,new)</code></pre>
 <pre><code>##        1        2        3 
@@ -508,20 +508,20 @@ abline(Hi)</code></pre>
 ## Multiple R-squared:  0.8463, Adjusted R-squared:  0.8434 
 ## F-statistic: 286.3 on 1 and 52 DF,  p-value: &lt; 2.2e-16</code></pre>
 <p>The adjusted R-square for this model (HEADLEN) is .84; the model for
-AGE had an adjusted R-square of .84. So far, AGE &amp; HEADLEN are tied
-for the highest adjusted R-squared value.</p>
-<p>For AGE:</p>
-<p>The adjusted R-square for this model (AGE) is .84; the model for NECK
-had an adjusted R-square of .75. So far, this is our highest value out
-of all the adjusted R-squared since .84 is greater than .75.</p>
+AGE has an adjusted R-square of .84 too. So far, AGE &amp; HEADLEN are
+tied for the highest adjusted R-squared value.The model for NECK had an
+adjusted R-squared value of .75: .84 is the highest value out of all the
+adjusted R-squared values since it’s greater than every other value.</p>
 </div>
 <div id="conclusion" class="section level1">
 <h1>Conclusion</h1>
-<p>I have tried all of them. The highest one by far is head length. In
-conclusion, the one with the highest Adjusted R-squared is head length.
-HEADLEN has the highest value out of all of them. I tried all the values
-by changing the name and body part in the same code until the highest
-number appeared.</p>
+<p>I have seen all the adjusted R-squared values. The highest two by far
+is head length &amp; age. In conclusion, the two with the highest
+Adjusted R-squared is head length &amp; age. I tried all the values by
+changing the name and body part in the same code until the highest
+number appeared. After writing down all the adjusted R-squared values,
+we have a tie. Head length and age have an adjusted R-squared value of
+.84. No other body parts had a higher value.</p>
 </div>
 
 

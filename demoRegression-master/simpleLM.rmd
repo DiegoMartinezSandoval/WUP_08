@@ -67,7 +67,7 @@ abline(chesty)
 summary.lm(chesty)
 ```
    
-The adjusted R-square for this model (CHEST) is .79; the model for NECK had an adjusted R-square of .75. So far the best model is the one based on CHEST since it's adjusted R-square is of higher value. 
+The adjusted R-square for this model (CHEST) is .79; the model for NECK had an adjusted R-square of .75. So far, the best model is CHEST since it's adjusted R-squared is of higher value. 
               
 ```{r}
 new <- data.frame(CHEST=c(17,22,26))
@@ -86,16 +86,11 @@ abline(Hi)
 summary.lm(Hi)
 ```
 
-The adjusted R-square for this model (HEADLEN) is .84; the model for AGE had an adjusted R-square of .84. So far, AGE & HEADLEN are tied for the highest adjusted R-squared value. 
-
-For AGE: 
-
-The adjusted R-square for this model (AGE) is .84; the model for NECK had an adjusted R-square of .75. So far, this is our highest value out of all the adjusted R-squared since .84 is greater than .75. 
+The adjusted R-square for this model (HEADLEN) is .84; the model for AGE has an adjusted R-square of .84 too. So far, AGE & HEADLEN are tied for the highest adjusted R-squared value.The model for NECK had an adjusted R-squared value of .75: .84 is the highest value out of all the adjusted R-squared values since it's greater than every other value. 
 
 # Conclusion
 
-
-I have tried all of them. The highest one by far is head length. In conclusion, the one with the highest Adjusted R-squared is head length. HEADLEN has the highest value out of all of them. I tried all the values by changing the name and body part in the same code until the highest number appeared.
+I have seen all the adjusted R-squared values. The highest two by far is head length & age. In conclusion, the two with the highest Adjusted R-squared is head length & age.  I tried all the values by changing the name and body part in the same code until the highest number appeared. After writing down all the adjusted R-squared values, we have a tie. Head length and age have an adjusted R-squared value of .84. No other body parts had a higher value. 
 
 
 
