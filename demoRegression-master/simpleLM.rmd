@@ -43,7 +43,7 @@ I can tell that this graph is linear and positive. This graph describes the rela
 # Numerical 
 
 
-## now predict the length of a bear who has a neck of 17, 22 and 26
+### now predict the length of a bear who has a neck of 17, 22 and 26
 
 
 ```{r}
@@ -52,11 +52,13 @@ predict(simp,new)
 predict(simp,new,se.fit=TRUE)
 ```
 
-We can see that the predicted 
+We can see that the predicted values are listed below. With a neck size of 17, the predicted length is 52.8. With a neck size of 22, the predicted length is 61. With a neck size of 26, the predicted length is 67.6. 
 
 
 ## Surely there is another variable that can better predict LENGTH than NECK. Find one and compare its performance to that of neck by it value of Adjusted-Rsquared (bigger is better).
 
+
+# Inferential Results 
 
 ```{r}
 chesty <- lm(LENGTH~CHEST, data=bears)
@@ -65,7 +67,7 @@ abline(chesty)
 summary.lm(chesty)
 ```
    
-The adjusted R-square for this model (CHEST) is .79; the model for NECK had an adjusted R-square of .75. So far the best model is the one based on CHEST.   
+The adjusted R-square for this model (CHEST) is .79; the model for NECK had an adjusted R-square of .75. So far the best model is the one based on CHEST since it's adjusted R-square is of higher value. 
               
 ```{r}
 new <- data.frame(CHEST=c(17,22,26))
@@ -73,10 +75,27 @@ predict(chesty,new)
 predict(chesty,new,se.fit=TRUE) 
 ```
 
+We can see that the predicted values are listed below. With a chest size of 17, the predicted length is 39.6. With a chest size of 22, the predicted length is 44.7. With a chest size of 26, the predicted length is 48.8. 
+
+
+
 ```{r}
 Hi <- lm(LENGTH~HEADLEN, data=bears)
 plot(LENGTH~HEADLEN, data = bears)
 abline(Hi)
 summary.lm(Hi)
 ```
-HEADLEN or head length is at .84. I have tried all of them. The highest one by far is head length. In  conclusion, the one with the highest Adjusted R-squared is head length. HEADLEN has the highest value out of all of them. I tried all the values by changing the name and body part in the same code until the highest number appeared. 
+
+The adjusted R-square for this model (HEADLEN) is .84; the model for AGE had an adjusted R-square of .84. So far, AGE & HEADLEN are tied for the highest adjusted R-squared value. 
+
+For AGE: 
+
+The adjusted R-square for this model (AGE) is .84; the model for NECK had an adjusted R-square of .75. So far, this is our highest value out of all the adjusted R-squared since .84 is greater than .75. 
+
+# Conclusion
+
+
+I have tried all of them. The highest one by far is head length. In conclusion, the one with the highest Adjusted R-squared is head length. HEADLEN has the highest value out of all of them. I tried all the values by changing the name and body part in the same code until the highest number appeared.
+
+
+

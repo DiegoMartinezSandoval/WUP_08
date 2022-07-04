@@ -402,9 +402,9 @@ it’s a positive relationship between the two.</p>
 </div>
 <div id="numerical" class="section level1">
 <h1>Numerical</h1>
-<div id="now-predict-the-length-of-a-bear-who-has-a-neck-of-17-22-and-26" class="section level2">
-<h2>now predict the length of a bear who has a neck of 17, 22 and
-26</h2>
+<div id="now-predict-the-length-of-a-bear-who-has-a-neck-of-17-22-and-26" class="section level3">
+<h3>now predict the length of a bear who has a neck of 17, 22 and
+26</h3>
 <pre class="r"><code>new &lt;- data.frame(NECK=c(17,22,26))
 predict(simp,new)</code></pre>
 <pre><code>##        1        2        3 
@@ -423,12 +423,19 @@ predict(simp,new)</code></pre>
 ## 
 ## $residual.scale
 ## [1] 5.375861</code></pre>
-<p>We can see that the predicted</p>
+<p>We can see that the predicted values are listed below. With a neck
+size of 17, the predicted length is 52.8. With a neck size of 22, the
+predicted length is 61. With a neck size of 26, the predicted length is
+67.6.</p>
 </div>
 <div id="surely-there-is-another-variable-that-can-better-predict-length-than-neck.-find-one-and-compare-its-performance-to-that-of-neck-by-it-value-of-adjusted-rsquared-bigger-is-better." class="section level2">
 <h2>Surely there is another variable that can better predict LENGTH than
 NECK. Find one and compare its performance to that of neck by it value
 of Adjusted-Rsquared (bigger is better).</h2>
+</div>
+</div>
+<div id="inferential-results" class="section level1">
+<h1>Inferential Results</h1>
 <pre class="r"><code>chesty &lt;- lm(LENGTH~CHEST, data=bears)
 plot(LENGTH~CHEST, data = bears)
 abline(chesty)</code></pre>
@@ -454,7 +461,7 @@ abline(chesty)</code></pre>
 ## F-statistic: 196.7 on 1 and 52 DF,  p-value: &lt; 2.2e-16</code></pre>
 <p>The adjusted R-square for this model (CHEST) is .79; the model for
 NECK had an adjusted R-square of .75. So far the best model is the one
-based on CHEST.</p>
+based on CHEST since it’s adjusted R-square is of higher value.</p>
 <pre class="r"><code>new &lt;- data.frame(CHEST=c(17,22,26))
 predict(chesty,new)</code></pre>
 <pre><code>##        1        2        3 
@@ -473,6 +480,10 @@ predict(chesty,new)</code></pre>
 ## 
 ## $residual.scale
 ## [1] 4.939419</code></pre>
+<p>We can see that the predicted values are listed below. With a chest
+size of 17, the predicted length is 39.6. With a chest size of 22, the
+predicted length is 44.7. With a chest size of 26, the predicted length
+is 48.8.</p>
 <pre class="r"><code>Hi &lt;- lm(LENGTH~HEADLEN, data=bears)
 plot(LENGTH~HEADLEN, data = bears)
 abline(Hi)</code></pre>
@@ -496,12 +507,21 @@ abline(Hi)</code></pre>
 ## Residual standard error: 4.235 on 52 degrees of freedom
 ## Multiple R-squared:  0.8463, Adjusted R-squared:  0.8434 
 ## F-statistic: 286.3 on 1 and 52 DF,  p-value: &lt; 2.2e-16</code></pre>
-<p>HEADLEN or head length is at .84. I have tried all of them. The
-highest one by far is head length. In conclusion, the one with the
-highest Adjusted R-squared is head length. HEADLEN has the highest value
-out of all of them. I tried all the values by changing the name and body
-part in the same code until the highest number appeared.</p>
+<p>The adjusted R-square for this model (HEADLEN) is .84; the model for
+AGE had an adjusted R-square of .84. So far, AGE &amp; HEADLEN are tied
+for the highest adjusted R-squared value.</p>
+<p>For AGE:</p>
+<p>The adjusted R-square for this model (AGE) is .84; the model for NECK
+had an adjusted R-square of .75. So far, this is our highest value out
+of all the adjusted R-squared since .84 is greater than .75.</p>
 </div>
+<div id="conclusion" class="section level1">
+<h1>Conclusion</h1>
+<p>I have tried all of them. The highest one by far is head length. In
+conclusion, the one with the highest Adjusted R-squared is head length.
+HEADLEN has the highest value out of all of them. I tried all the values
+by changing the name and body part in the same code until the highest
+number appeared.</p>
 </div>
 
 
